@@ -1,0 +1,38 @@
+<html>
+<head>	
+	<title>Лабораторная работа 2</title>
+	<script>
+	function result(){
+		var N=document.forms["frm"].elements["N"].value;
+		var arr=Array.from(N);
+		var max=arr[0];
+		var min=arr[0];
+		var indexmin=0;
+		var indexmax=0;
+		for (var i=0; i<arr.length; i++)
+		{
+			if(arr[i]>max){
+				max=arr[i];
+				indexmax=i;
+			}
+				else if(arr[i]<min){
+				min=arr[i];
+				indexmin=i;
+			}
+		}	
+		var temp=arr[indexmin];
+		arr[indexmin]=arr[indexmax];
+		arr[indexmax]=temp;
+		document.write(arr);	
+	}
+		
+	</script>
+</head>
+<body>
+	<form id="frm">
+		<label for="N">Введите целые числа:</label>
+		<input type="text" id="N">
+		<input type="button" onclick="result()" value="Отправить">
+	</form>
+</body>
+</html>
